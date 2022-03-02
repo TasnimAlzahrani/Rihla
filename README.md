@@ -10,6 +10,7 @@
   <p align="center">
     Rihla is a system designed to ease the connection between Umm AL-Quraa University students and bus drivers to help students find a proper bus with a driver they can trust.
   </p>
+  <p>This project is still on Evaluation and testing stage :)</p>
 </div>
 
 
