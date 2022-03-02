@@ -2,22 +2,13 @@
 <br />
 <div align="center">
   <a href="https://github.com/github_username/repo_name">
-    <img src="images/logo.png" alt="Logo" width="80" height="80">
+    <img src="src/logo-removebg-preview.png" alt="Logo" width="200" height="200">
   </a>
 
 <h3 align="center">Rihla</h3>
 
   <p align="center">
     Rihla is a system designed to ease the connection between Umm AL-Quraa University students and bus drivers to help students find a proper bus with a driver they can trust.
-    <br />
-    <a href="https://github.com/github_username/repo_name"><strong>Explore the docs »</strong></a>
-    <br />
-    <br />
-    <a href="https://github.com/github_username/repo_name">View Demo</a>
-    ·
-    <a href="https://github.com/github_username/repo_name/issues">Report Bug</a>
-    ·
-    <a href="https://github.com/github_username/repo_name/issues">Request Feature</a>
   </p>
 </div>
 
