@@ -1,7 +1,7 @@
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
-  <a href="https://github.com/github_username/repo_name">
+  <a href="https://github.com/TasnimAlzahrani/Rihla">
     <img src="src/logo-removebg-preview.png" alt="Logo" width="200" height="200">
   </a>
 
@@ -28,41 +28,21 @@
       <a href="#getting-started">Getting Started</a>
       <ul>
         <li><a href="#prerequisites">Prerequisites</a></li>
-        <li><a href="#installation">Installation</a></li>
       </ul>
     </li>
-    <li><a href="#usage">Usage</a></li>
-    <li><a href="#roadmap">Roadmap</a></li>
-    <li><a href="#contributing">Contributing</a></li>
-    <li><a href="#license">License</a></li>
     <li><a href="#contact">Contact</a></li>
     <li><a href="#acknowledgments">Acknowledgments</a></li>
   </ol>
 </details>
 
 
-
-<!-- ABOUT THE PROJECT -->
-## About The Project
-
-[![Product Name Screen Shot][product-screenshot]](https://example.com)
-
-Here's a blank template to get started: To avoid retyping too much info. Do a search and replace with your text editor for the following: `github_username`, `repo_name`, `twitter_handle`, `linkedin_username`, `email_client`, `email`, `project_title`, `project_description`
-
-<p align="right">(<a href="#top">back to top</a>)</p>
-
-
-
 ### Built With
 
-* [Next.js](https://nextjs.org/)
-* [React.js](https://reactjs.org/)
-* [Vue.js](https://vuejs.org/)
-* [Angular](https://angular.io/)
-* [Svelte](https://svelte.dev/)
-* [Laravel](https://laravel.com)
-* [Bootstrap](https://getbootstrap.com)
-* [JQuery](https://jquery.com)
+* [Java](https://www.oracle.com/java/technologies/java8.html)
+* [JavaFX](https://www.oracle.com/java/technologies/javase/javafx-overview.html)
+* CSS
+* [Hibernate ORM](https://hibernate.org/orm/)
+* [MySQL](https://www.mysql.com/)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -75,46 +55,61 @@ This is an example of how you may give instructions on setting up your project l
 To get a local copy up and running follow these simple example steps.
 
 ### Prerequisites
+#### Notes: 
+* Netbeans IDE is used in this tutorial because it supports Hibernate and provides simple configuration wizard while some other IDEs don’t support Hibernate ORM tool in their free versions.
+* First: download the MySQL community server + MySQL community workbench from the following link: https://dev.mysql.com/downloads/
 
-This is an example of how to list things you need to use the software and how to install them.
-* npm
-  ```sh
-  npm install npm@latest -g
-  ```
+First you need to have the database for the application to function, here is the database design: 
+<img src= "https://user-images.githubusercontent.com/97178478/156430495-ad5ebad8-26eb-482c-82d0-4b29f0ac8bea.png" hieght = "900" width = "800">
 
-### Installation
-
-1. Get a free API Key at [https://example.com](https://example.com)
-2. Clone the repo
-   ```sh
-   git clone https://github.com/github_username/repo_name.git
-   ```
-3. Install NPM packages
-   ```sh
-   npm install
-   ```
-4. Enter your API in `config.js`
-   ```js
-   const API_KEY = 'ENTER YOUR API';
-   ```
-
+Second, follow these steps:
+#### Steps: 
+* Right click on the package “rihla”: Create new (Hibernate Configuration Wizard) to create the hibernate.cfg.xml file.
+* From the appeared window do the following:
+  * Change the folder from “src” to the package folder inside the src --> “src/rihla”
+  * Click Next -> then Choose your DB connection (or new DB Connection), If the connection is not specified and you want to create a new Database connection follow the steps bellow: 
+    * Choose MySQL(Connector/j driver)
+    * Click add and browse to the location of MySQL connector jar file in your computer. I f you could not find the file you can download the version suitable for your MySQL server from here: https://dev.mysql.com/downloads/connector/j/
+    * Then click next
+    * The following must be considered
+      1. Change the database name to be “student”
+      2. Enter the password of your MySQL connection
+      3. Test the connection before proceeding to the next step, if the connection succeeds, Click Finish.
+  * The Hibernate Wizard now will be ready to set the rest of configuration properties as follow:
+    1. Choose the JDBC properties from the wizard:
+       Add 1-> (if not there)
+       Property Name : hibernate.connection.driver_class
+       Property Value: com.mysql.jdbc.driver
+       Add 2-> (if not there)
+       Property Name : hibernate.connection.url
+       Property Value: jdbc:mysql://localhost:3306/student
+       Add 3-> (if not there)
+       Property Name : hibernate.connection.username
+       Property Value: Your MySQL username connection
+       Add 4->
+       Property Name : hibernate.connection.passwords
+       Property Value: Your MySQL connection password
+    2. Down to Optional property in the same wizard and expand the Configuration
+       Property then:
+       Add 1->
+       Property Name : hibernate.show_sql
+       Property Value: true
+       Add 2-> (if not there)
+       Property Name : hibernate.dialect
+       Property Value: org.hibernate.dialect.MySQLDialect
+     3. Down and expand the Miscellanies Properties in the same wizard, then:
+        Add 1->
+        Property Name : hibernate.currenr_session_contect_class
+        Property Value: thread
+        
+*****
 <p align="right">(<a href="#top">back to top</a>)</p>
 
-
-
-<!-- USAGE EXAMPLES -->
-## Usage
-
-Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
-
-_For more examples, please refer to the [Documentation](https://example.com)_
-
-<p align="right">(<a href="#top">back to top</a>)</p>
 
 
 
 <!-- ROADMAP -->
-## Roadmap
+<!-- ## Roadmap
 
 - [ ] Feature 1
 - [ ] Feature 2
@@ -125,41 +120,14 @@ See the [open issues](https://github.com/github_username/repo_name/issues) for a
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
-
-
-<!-- CONTRIBUTING -->
-## Contributing
-
-Contributions are what make the open source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
-
-If you have a suggestion that would make this better, please fork the repo and create a pull request. You can also simply open an issue with the tag "enhancement".
-Don't forget to give the project a star! Thanks again!
-
-1. Fork the Project
-2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the Branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
-
-<p align="right">(<a href="#top">back to top</a>)</p>
-
-
-
-<!-- LICENSE -->
-## License
-
-Distributed under the MIT License. See `LICENSE.txt` for more information.
-
-<p align="right">(<a href="#top">back to top</a>)</p>
-
-
+ -->
 
 <!-- CONTACT -->
 ## Contact
 
-Your Name - [@twitter_handle](https://twitter.com/twitter_handle) - email@email_client.com
+Your Name - [@__Tasn](https://twitter.com/__tasn) - TasneemAliAlzahrani@outlook.com
 
-Project Link: [https://github.com/github_username/repo_name](https://github.com/github_username/repo_name)
+Project Link: [https://github.com/TasnimAlzahrani/Rihla](https://github.com/TasnimAlzahrani/Rihla)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -168,8 +136,6 @@ Project Link: [https://github.com/github_username/repo_name](https://github.com/
 <!-- ACKNOWLEDGMENTS -->
 ## Acknowledgments
 
-* []()
-* []()
-* []()
+* Thanks to Alaa Turkestani for helping me with the buses filters and with the student bus cancelation :).
 
 <p align="right">(<a href="#top">back to top</a>)</p>
