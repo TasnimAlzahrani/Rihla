@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Text?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="580.0" prefWidth="350.0" styleClass="page" stylesheets="@rihla.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="rihla.Student_myProfileController">
+   <top>
+      <BorderPane prefHeight="140.0" BorderPane.alignment="CENTER">
+         <BorderPane.margin>
+            <Insets />
+         </BorderPane.margin>
+         <center>
+            <Label prefHeight="167.0" styleClass="header" stylesheets="@rihla.css" text="My Profile" BorderPane.alignment="CENTER">
+               <padding>
+                  <Insets left="10.0" />
+               </padding></Label>
+         </center>
+         <padding>
+            <Insets left="40.0" right="5.0" />
+         </padding>
+         <right>
+            <Button mnemonicParsing="false" onAction="#exit" styleClass="navBarBtn" BorderPane.alignment="CENTER">
+               <graphic>
+                  <ImageView fitHeight="35.0" fitWidth="35.0">
+                     <image>
+                        <Image url="@../exit.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+         </right>
+      </BorderPane>
+   </top>
+   <bottom>
+      <HBox id="navbar" alignment="CENTER" prefHeight="60.0" prefWidth="200.0" spacing="5.0" stylesheets="@rihla.css" BorderPane.alignment="CENTER">
+         <children>
+            <Button mnemonicParsing="false" onAction="#homepage" styleClass="navBarBtn">
+               <graphic>
+                  <ImageView fitHeight="50.0" fitWidth="50.0">
+                     <image>
+                        <Image url="@../icons8-home-144.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button mnemonicParsing="false" onAction="#myprofile" styleClass="navBarBtn">
+               <graphic>
+                  <ImageView fitHeight="50.0" fitWidth="50.0">
+                     <image>
+                        <Image url="@../icons8-test-account-96.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button mnemonicParsing="false" onAction="#notifications" styleClass="navBarBtn">
+               <graphic>
+                  <ImageView fitHeight="50.0" fitWidth="50.0">
+                     <image>
+                        <Image url="@../icons8-notification-96.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button mnemonicParsing="false" onAction="#assignedBus" styleClass="navBarBtn">
+               <graphic>
+                  <ImageView fitHeight="50.0" fitWidth="50.0">
+                     <image>
+                        <Image url="@../icons8-bus-100.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button mnemonicParsing="false" onAction="#missingItems" styleClass="navBarBtn">
+               <graphic>
+                  <ImageView fitHeight="50.0" fitWidth="50.0">
+                     <image>
+                        <Image url="@../icons8-search-500.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+         </children>
+         <padding>
+            <Insets top="3.0" />
+         </padding>
+      </HBox>
+   </bottom>
+   <center>
+      <ScrollPane fitToWidth="true" hbarPolicy="NEVER" vbarPolicy="NEVER" BorderPane.alignment="CENTER">
+         <content>
+            <VBox alignment="CENTER" prefHeight="460.0" prefWidth="361.0">
+               <children>
+                  <Text id="name" fx:id="name" fontSmoothingType="LCD" text="Nora mohammed" textAlignment="CENTER">
+                     <VBox.margin>
+                        <Insets bottom="20.0" />
+                     </VBox.margin>
+                  </Text>
+                  <GridPane alignment="CENTER" nodeOrientation="LEFT_TO_RIGHT" prefHeight="282.0" prefWidth="331.0" vgap="15.0">
+                    <columnConstraints>
+                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="195.0" minWidth="10.0" prefWidth="138.33331298828125" />
+                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="253.6666259765625" minWidth="10.0" prefWidth="189.66668701171875" />
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints maxHeight="66.33334350585938" minHeight="10.0" prefHeight="41.66668701171875" vgrow="SOMETIMES" />
+                      <RowConstraints maxHeight="60.33331298828125" minHeight="10.0" prefHeight="44.33331298828125" vgrow="SOMETIMES" />
+                      <RowConstraints maxHeight="60.33331298828125" minHeight="10.0" prefHeight="44.33331298828125" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="48.66668701171875" minHeight="10.0" prefHeight="48.66668701171875" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <children>
+                        <Label styleClass="gridpane-label" stylesheets="@rihla.css" text="Student number:" textFill="#817d7d" />
+                        <Label styleClass="gridpane-label" stylesheets="@rihla.css" text="Phone number:" textFill="#817d7d" GridPane.rowIndex="1" />
+                        <Label styleClass="gridpane-label" stylesheets="@rihla.css" text="Address:" textFill="#817d7d" GridPane.rowIndex="3" />
+                        <Label styleClass="gridpane-label" stylesheets="@rihla.css" text="Expected fee:" textFill="#817d7d" GridPane.rowIndex="4" />
+                        <Label fx:id="studentId" contentDisplay="TOP" styleClass="gridpane-data" text="43900000" GridPane.columnIndex="1" />
+                        <Label fx:id="phoneNumber" styleClass="gridpane-data" stylesheets="@rihla.css" text="05505555555" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                        <Label fx:id="address" prefHeight="47.0" prefWidth="192.0" styleClass="gridpane-data" stylesheets="@rihla.css" text="Makkah, alsharee, 10" wrapText="true" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                        <Label fx:id="expectedFee" prefHeight="25.0" prefWidth="191.0" styleClass="gridpane-data" stylesheets="@rihla.css" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                        <Label styleClass="gridpane-label" text="Email:" textFill="#817d7d" GridPane.rowIndex="2" />
+                        <Label fx:id="email" prefHeight="43.0" prefWidth="193.0" styleClass="gridpane-data" text="tasneem2056@gmail.com" wrapText="true" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                     </children>
+                     <VBox.margin>
+                        <Insets left="20.0" />
+                     </VBox.margin>
+                     <padding>
+                        <Insets bottom="20.0" />
+                     </padding>
+                  </GridPane>
+                  <Button mnemonicParsing="false" onAction="#enterPassword" prefHeight="70.0" styleClass="buttonEithSmallerFont" stylesheets="@rihla.css" text="Edit personal information" wrapText="true">
+                     <VBox.margin>
+                        <Insets bottom="20.0" />
+                     </VBox.margin>
+                  </Button>
+               </children>
+            </VBox>
+         </content>
+      </ScrollPane>
+   </center>
+</BorderPane>

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="580.0" prefWidth="350.0" styleClass="page" stylesheets="@rihla.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="rihla.VerificationController">
+   <top>
+      <BorderPane prefHeight="140.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <center>
+            <Label styleClass="header" text="Verification" BorderPane.alignment="CENTER" />
+         </center>
+         <left>
+            <Button mnemonicParsing="false" onAction="#goBack" styleClass="smallbtn" BorderPane.alignment="CENTER">
+               <graphic>
+                  <ImageView fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../back-arrow.png" />
+                     </image>
+                  </ImageView>
+               </graphic></Button>
+         </left>
+         <BorderPane.margin>
+            <Insets />
+         </BorderPane.margin>
+         <padding>
+            <Insets left="20.0" right="40.0" />
+         </padding>
+      </BorderPane>
+   </top>
+   <center>
+      <VBox alignment="TOP_CENTER" fillWidth="false" prefHeight="200.0" prefWidth="100.0" spacing="30.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label prefHeight="78.0" prefWidth="285.0" styleClass="regular" text="Enter the verification code we just sent you on your email address" textAlignment="CENTER" wrapText="true" />
+            <TextField fx:id="codeField" prefWidth="231.0" promptText="Enter the 6 digits verification code" />
+            <Button mnemonicParsing="false" onAction="#nextPage" text="Verify" />
+         </children>
+         <BorderPane.margin>
+            <Insets top="20.0" />
+         </BorderPane.margin>
+      </VBox>
+   </center>
+</BorderPane>

@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Slider?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="580.0" prefWidth="350.0" styleClass="page" stylesheets="@rihla.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="rihla.CreateDriverAccountController">
+    <top>
+        <BorderPane prefHeight="140.0" prefWidth="200.0" BorderPane.alignment="BOTTOM_CENTER">
+            <center>
+            <VBox fillWidth="false" prefHeight="100.0" BorderPane.alignment="CENTER">
+               <children>
+                      <Label alignment="CENTER" prefHeight="40.0" prefWidth="240.0" styleClass="header" text="Driver" textAlignment="CENTER" wrapText="true" />
+                  <Label alignment="CENTER" prefHeight="77.0" prefWidth="249.0" styleClass="header" text="Information" textAlignment="CENTER" />
+               </children>
+            </VBox>
+            </center>
+            <left>
+                <Button mnemonicParsing="false" onAction="#goBack" styleClass="smallbtn" BorderPane.alignment="CENTER">
+                    <graphic>
+                        <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../back-arrow.png" />
+                            </image>
+                        </ImageView>
+                    </graphic>
+                </Button>
+            </left>
+            <padding>
+                <Insets left="20.0" right="20.0" />
+            </padding>
+            <right>
+                <Button mnemonicParsing="false" onAction="#goForward" styleClass="smallbtn" BorderPane.alignment="CENTER">
+                    <graphic>
+                        <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../back-arrow2.png" />
+                            </image>
+                        </ImageView>
+                    </graphic>
+                </Button>
+            </right>
+        </BorderPane>
+    </top>
+    <center>
+        <ScrollPane fitToWidth="true" hbarPolicy="NEVER" vbarPolicy="NEVER" BorderPane.alignment="CENTER">
+            <content>
+                <VBox fx:id="driver_info_vbox" alignment="TOP_CENTER" fillWidth="false" prefHeight="1600.0" prefWidth="348.0" spacing="20.0">
+                    <children>
+                        <GridPane prefHeight="378.0" prefWidth="320.0" vgap="20.0">
+                            <columnConstraints>
+                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                            </columnConstraints>
+                            <rowConstraints>
+                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            </rowConstraints>
+                            <children>
+                                <Label styleClass="gridpane-label" text="First name" />
+                                <Label styleClass="gridpane-label" text="Last name" GridPane.rowIndex="1" />
+                                <Label styleClass="gridpane-label" text="Phone number" GridPane.rowIndex="2" />
+                                <Label styleClass="gridpane-label" text="Birth date" GridPane.rowIndex="3" />
+                                <Label styleClass="gridpane-label" text="Nationality" GridPane.rowIndex="4" />
+                                <Label styleClass="gridpane-label" text="Personal photo" GridPane.rowIndex="5" />
+                                <TextField fx:id="firstName" GridPane.columnIndex="1" />
+                                <TextField fx:id="lastName" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                <TextField fx:id="phoneNumber" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                                <DatePicker id="test" fx:id="birthDate" maxWidth="168.0" prefHeight="35.0" prefWidth="168.0" stylesheets="@../empty.css" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                                <ComboBox fx:id="nationality" prefHeight="34.0" prefWidth="163.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                                <Button fx:id="uploadAnImageBtn" mnemonicParsing="false" onAction="#uploadAnImage" styleClass="buttonEithSmallerFont" text="Upload a picture" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                            </children>
+                        </GridPane>
+                        <Label styleClass="gridpane-label" text="Bus fee" />
+                        <Slider fx:id="feeSlider" blockIncrement="100.0" majorTickUnit="100.0" max="2000.0" min="100.0" minorTickCount="50" prefHeight="38.0" prefWidth="301.0" showTickLabels="true" showTickMarks="true" snapToTicks="true" />
+                        <Label fx:id="fee" prefHeight="17.0" prefWidth="86.0" styleClass="gridpane-data2" />
+                        <GridPane prefHeight="165.0" prefWidth="320.0" vgap="21.0">
+                            <columnConstraints>
+                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                            </columnConstraints>
+                            <rowConstraints>
+                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            </rowConstraints>
+                            <children>
+                                <Label styleClass="gridpane-label" text="Email" />
+                                <Label styleClass="gridpane-label" text="Password" GridPane.rowIndex="1" />
+                                <Label styleClass="gridpane-label" text="Confirm password" GridPane.rowIndex="2" />
+                                <PasswordField fx:id="password" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                <PasswordField fx:id="confirm_password" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                                <TextField fx:id="email" GridPane.columnIndex="1" />
+                            </children>
+                        </GridPane>
+                        <Label prefHeight="75.0" prefWidth="210.0" styleClass="gridpane-label" text="Choose a city and the targeted neighborhoods" textAlignment="CENTER" wrapText="true" />
+                        <Label contentDisplay="RIGHT" styleClass="gridpane-label" text="City">
+                            <graphic>
+                                <ComboBox fx:id="cities" onAction="#setNeighborhoods" prefHeight="39.0" prefWidth="220.0" />
+                            </graphic>
+                        </Label>
+                        <ListView fx:id="neighborhoods" prefHeight="161.0" prefWidth="261.0" />
+                        <Label styleClass="gridpane-label" text="Payment method" />
+                        <HBox alignment="CENTER" prefHeight="70.0" prefWidth="350.0" spacing="50.0">
+                            <children>
+                                <RadioButton fx:id="cashOnly" mnemonicParsing="false" onAction="#hide_credit_card_information" styleClass="regular2" text="Cash only">
+                                    <toggleGroup>
+                                        <ToggleGroup fx:id="paymentMethod" />
+                                    </toggleGroup>
+                                </RadioButton>
+                                <RadioButton fx:id="cash_and_card" mnemonicParsing="false" onAction="#show_credit_card_information" prefHeight="58.0" prefWidth="182.0" selected="true" styleClass="regular2" text="Cash and through credit card" toggleGroup="$paymentMethod" wrapText="true" />
+                            </children>
+                        </HBox>
+                        <VBox fx:id="credit_card_information_vbox" alignment="CENTER" prefHeight="400.0" prefWidth="337.0" spacing="10.0">
+                            <children>
+                                <Label styleClass="gridpane-label" text="Credit card information" />
+                                <Label fx:id="you_have_entered" text="You can add up to 4 cards" />
+                                <Button mnemonicParsing="false" onAction="#enter_new_card" prefHeight="22.0" styleClass="buttonEithSmallerFont" text="Add new card" />
+                                <GridPane id="card_form" fx:id="card_form" prefHeight="211.0" prefWidth="321.0" style="-fx-background-radius: 1.3em;" vgap="10.0">
+                                    <columnConstraints>
+                                        <ColumnConstraints halignment="LEFT" hgrow="SOMETIMES" maxWidth="162.66668701171875" minWidth="10.0" prefWidth="75.66668701171875" />
+                                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="258.0" minWidth="10.0" prefWidth="235.33331298828125" />
+                                    </columnConstraints>
+                                    <rowConstraints>
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    </rowConstraints>
+                                    <children>
+                                        <Label prefHeight="41.0" prefWidth="142.0" styleClass="gridpane-label2" text="Bank:" textAlignment="CENTER" />
+                                        <Label prefHeight="42.0" prefWidth="111.0" styleClass="gridpane-label2" text="Account number:" wrapText="true" GridPane.rowIndex="1" />
+                                        <Label prefHeight="20.0" prefWidth="92.0" styleClass="gridpane-label2" text="IBAN:" textAlignment="CENTER" GridPane.rowIndex="2" />
+                                        <TextField fx:id="accountNumber" prefHeight="31.0" prefWidth="238.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                            <styleClass>
+                                                <String fx:value="gridpane-data2" />
+                                                <String fx:value="smallerTextField" />
+                                            </styleClass>
+                                        </TextField>
+                                        <TextField fx:id="IBAN" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                                            <styleClass>
+                                                <String fx:value="gridpane-data2" />
+                                                <String fx:value="smallerTextField" />
+                                            </styleClass>
+                                        </TextField>
+                                        <ComboBox fx:id="bank" prefHeight="25.0" prefWidth="180.0" styleClass="gridpane-data2" GridPane.columnIndex="1" GridPane.halignment="CENTER" />
+                                        <Button mnemonicParsing="false" onAction="#submitCardForm" prefHeight="40.0" prefWidth="130.0" style="-fx-pref-width: 150px;" styleClass="buttonEithSmallerFont" text="Submit form" textFill="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                                    </children>
+                                    <padding>
+                                        <Insets bottom="10.0" left="15.0" right="5.0" top="10.0" />
+                                    </padding>
+                                </GridPane>
+                            </children>
+                            <padding>
+                                <Insets left="8.0" right="20.0" />
+                            </padding>
+                        </VBox>
+                          <VBox fx:id="bank_forms_vbox" spacing="10.0">
+                              <VBox.margin>
+                                  <Insets top="10.0" />
+                              </VBox.margin>
+                          </VBox>
+                    </children>
+                </VBox>
+            </content>
+            <padding>
+                <Insets top="20.0" />
+            </padding>
+        </ScrollPane>
+    </center>
+</BorderPane>

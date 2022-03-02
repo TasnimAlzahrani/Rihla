@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Text?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="580.0" prefWidth="350.0" styleClass="page" stylesheets="@rihla.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="rihla.HomePage_studentController">
+    <top>
+        <HBox prefHeight="100.0" prefWidth="350.0" BorderPane.alignment="CENTER">
+            <children>
+                <ImageView fitHeight="100.0" fitWidth="80.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../logo-removebg-preview.png" />
+                    </image>
+                    <HBox.margin>
+                        <Insets bottom="10.0" left="20.0" right="15.0" top="20.0" />
+                    </HBox.margin>
+                </ImageView>
+                <VBox prefHeight="200.0" prefWidth="100.0">
+                    <children>
+                        <Text fill="#88b2aa" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 30;" styleClass="header" text="Welcome," wrappingWidth="224.0">
+                            <VBox.margin>
+                                <Insets top="10.0" />
+                            </VBox.margin>
+                        </Text>
+                        <Text fx:id="name" fill="#88b2aa" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 30;" styleClass="header" text="student" wrappingWidth="225.0">
+                            <VBox.margin>
+                                <Insets left="8.0" />
+                            </VBox.margin>
+                        </Text>
+                    </children>
+                </VBox>
+            </children>
+        </HBox>
+    </top>
+    <center>
+        <VBox alignment="CENTER" fillWidth="false" prefHeight="300.0" prefWidth="350.0" BorderPane.alignment="CENTER">
+            <children>
+                <VBox prefHeight="300.0" prefWidth="233.0">
+                    <children>
+                        <Label fx:id="date" styleClass="gridpane-label2" text="Monday, 29 Sep" />
+                        <VBox prefHeight="242.0" prefWidth="211.0">
+                            <children>
+                                <Label styleClass="gridpane-label" text="Your bus schedule">
+                                    <padding>
+                                        <Insets bottom="10.0" top="15.0" />
+                                    </padding>
+                                </Label>
+                                <VBox prefHeight="200.0" prefWidth="100.0">
+                                    <children>
+                                        <GridPane fx:id="schedule" maxWidth="-Infinity" prefHeight="187.0" prefWidth="231.0">
+                                            <columnConstraints>
+                                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="99.0" minWidth="10.0" prefWidth="50.0" />
+                                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="89.0" minWidth="10.0" prefWidth="61.0" />
+                                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="83.0" minWidth="10.0" prefWidth="56.0" />
+                                            </columnConstraints>
+                                            <rowConstraints>
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                            </rowConstraints>
+                                            <children>
+                                                <Label styleClass="gridpane-label2" text="Sun" />
+                                                <Label styleClass="gridpane-label2" text="Mon" GridPane.rowIndex="1" />
+                                                <Label styleClass="gridpane-label2" text="Tues" GridPane.rowIndex="2" />
+                                                <Label styleClass="gridpane-label2" text="Wed" GridPane.rowIndex="3" />
+                                                <Label styleClass="gridpane-label2" text="Thu" GridPane.rowIndex="4" />
+                                            </children>
+                                            <VBox.margin>
+                                                <Insets left="5.0" />
+                                            </VBox.margin>
+                                            <padding>
+                                                <Insets left="3.0" />
+                                            </padding>
+                                        </GridPane>
+                                    </children>
+                                </VBox>
+                            </children>
+                        </VBox>
+                    </children>
+                    <padding>
+                        <Insets bottom="15.0" left="11.0" right="11.0" top="10.0" />
+                    </padding>
+               <styleClass>
+                  <String fx:value="homepage" />
+                  <String fx:value="gridpane-data" />
+               </styleClass>
+                </VBox>
+            </children>
+        </VBox>
+    </center>
+    <bottom>
+        <HBox id="navbar" alignment="CENTER" prefHeight="60.0" prefWidth="200.0" spacing="5.0" stylesheets="@rihla.css" BorderPane.alignment="CENTER">
+            <children>
+                <Button mnemonicParsing="false" onAction="#homepage" styleClass="navBarBtn">
+                    <graphic>
+                        <ImageView fitHeight="50.0" fitWidth="50.0">
+                            <image>
+                                <Image url="@../icons8-home-144.png" />
+                            </image>
+                        </ImageView>
+                    </graphic>
+                </Button>
+                <Button mnemonicParsing="false" onAction="#myprofile" styleClass="navBarBtn">
+                    <graphic>
+                        <ImageView fitHeight="50.0" fitWidth="50.0">
+                            <image>
+                                <Image url="@../icons8-test-account-96.png" />
+                            </image>
+                        </ImageView>
+                    </graphic>
+                </Button>
+                <Button mnemonicParsing="false" onAction="#notifications" styleClass="navBarBtn">
+                    <graphic>
+                        <ImageView fitHeight="50.0" fitWidth="50.0">
+                            <image>
+                                <Image url="@../icons8-notification-96.png" />
+                            </image>
+                        </ImageView>
+                    </graphic>
+                </Button>
+                <Button mnemonicParsing="false" onAction="#assignedBus" styleClass="navBarBtn">
+                    <graphic>
+                        <ImageView fitHeight="50.0" fitWidth="50.0">
+                            <image>
+                                <Image url="@../icons8-bus-100.png" />
+                            </image>
+                        </ImageView>
+                    </graphic>
+                </Button>
+                <Button mnemonicParsing="false" onAction="#missingItems" styleClass="navBarBtn">
+                    <graphic>
+                        <ImageView fitHeight="50.0" fitWidth="50.0">
+                            <image>
+                                <Image url="@../icons8-search-500.png" />
+                            </image>
+                        </ImageView>
+                    </graphic>
+                </Button>
+            </children>
+            <padding>
+                <Insets top="3.0" />
+            </padding>
+        </HBox>
+    </bottom>
+</BorderPane>
