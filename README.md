@@ -52,9 +52,6 @@
 <!-- GETTING STARTED -->
 ## Getting Started
 
-This is an example of how you may give instructions on setting up your project locally.
-To get a local copy up and running follow these simple example steps.
-
 ### Prerequisites
 #### Notes: 
 * Netbeans IDE is used in this tutorial because it supports Hibernate and provides simple configuration wizard while some other IDEs don’t support Hibernate ORM tool in their free versions.
