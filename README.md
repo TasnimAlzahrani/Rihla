@@ -123,7 +123,7 @@ See the [open issues](https://github.com/github_username/repo_name/issues) for a
 <!-- CONTACT -->
 ## Contact
 
-Your Name - [@__Tasn](https://twitter.com/__tasn) - TasneemAliAlzahrani@outlook.com
+Tasneem Alzahrani - [@__Tasn](https://twitter.com/__tasn) - TasneemAliAlzahrani@outlook.com
 
 Project Link: [https://github.com/TasnimAlzahrani/Rihla](https://github.com/TasnimAlzahrani/Rihla)
 
